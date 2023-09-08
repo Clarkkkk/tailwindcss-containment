@@ -42,6 +42,8 @@
     "dev": "vite --host",
     "build": "tsc && vite build",
     "test": "vitest",
+    "test:update": "vitest --update",
+    "test:run": "vitest --run --changed",
     "test:coverage": "vitest --coverage",
     "typecheck": "tsc --noEmit --watch --preserveWatchOutput",
     "format": "eslint --fix --cache src/**/*.{vue,ts}",
