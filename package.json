@@ -1,7 +1,7 @@
 {
   "name": "tailwindcss-containment",
   "description": "A tailwindcss plugin for css containment",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "author": "Aaron Zhou",
   "packageManager": "pnpm@8.6.3",
