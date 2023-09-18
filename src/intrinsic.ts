@@ -67,12 +67,14 @@ export const intrinsicUtilities = prefixes.map(([prefix, property]) => {
     return result
 })
 
-export const intrinsicMatchUtilities = prefixes.reduce((utilities, [prefix, property]) => {
-    utilities[prefix.replace(/-$/, '')] = (val: string) => {
-        return {
-            [property]: val
+export const intrinsicMatchUtilities = prefixes
+    .filter((item) => !item[0].includes('auto'))
+    .reduce((utilities, [prefix, property]) => {
+        utilities[prefix.replace(/-$/, '')] = (val: string) => {
+            return {
+                [property]: val
+            }
         }
-    }
 
-    return utilities
-}, {} as Record<string, (val: string) => Record<string, string>>)
+        return utilities
+    }, {} as Record<string, (val: string) => Record<string, string>>)
