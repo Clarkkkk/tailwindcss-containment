@@ -18,4 +18,19 @@ describe('content-visibility', () => {
           }"
         `)
     })
+
+    test('arbitrary values', async () => {
+        const classes = "content-visibility-[initial] before:content-['Hello_World']"
+
+        const css = await getCss(classes)
+        expect(css).toMatchInlineSnapshot(`
+          ".content-visibility-\\\\[initial\\\\] {
+              content-visibility: initial
+          }
+          .before\\\\:content-\\\\[\\\\'Hello_World\\\\'\\\\]::before {
+              --tw-content: 'Hello World';
+              content: var(--tw-content)
+          }"
+        `)
+    })
 })
