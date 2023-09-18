@@ -35,6 +35,11 @@ const plugin: {
         contain: (value) => ({
             contain: value
         }),
+        'content-visibility': (value) => {
+            return {
+                'content-visibility': value
+            }
+        },
         ...intrinsicMatchUtilities
     })
 })
